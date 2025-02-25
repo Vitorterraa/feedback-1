@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coment</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <header class="header_container">
+        <h1>Faça seu comentário</h1>
+    </header>
+    
+
+<form action="/post/cadastrar_mensagem" method="post" class="form_container">
+
+   
+    <label class="form_container__label-usuario" >Usuário</label>
+    <input type="text" class="form_container__user format_border" name="user">
+
+    <label class="form_container__label-comentario" >Comentário</label>
+    <input type="text" class="form_container__comentario format_border" name="comentario" >
+  
+    
+    <button type="submit" class="form_container__btn format_border">Enviar</button>
+
+</form>
+
+    <div class="mensagem_container">
+        <div class="mensagem_container__header">
+            <span>Godofredo</span>
+            
+        </div>
+
+    
+    </div>
+    
+</body>
+</html>
