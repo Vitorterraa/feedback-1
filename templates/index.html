@@ -31,13 +31,16 @@
 
     <div class="mensagem_container">
 
-        <div class="mensagem_container__header">
-            
-            <span>Godofredo</span>
+        {%for mensagem in mensagens }
+        <div class="mensagem">
+
+            <strong>{{mensagem.usuario}} ({{mensagem.data_hora}})</strong>
+            <p>{{mensagem.mensagem}}</p>
             
         </div>
 
-    
+        {%endfor%}
+
     </div>
     
 </body>

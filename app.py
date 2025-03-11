@@ -10,7 +10,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def pagina_principal():
-    return render_template("index.html")
+    mensagens = Mensagem.recuperar_mensagens
+    
+    return render_template("index.html", mensagens = mensagens)
 
 @app.route("/post/cadastrar_mensagem", methods = ["POST"])
 def post_mensagem():
