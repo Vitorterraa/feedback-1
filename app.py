@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect
 import datetime
 import mysql.connector
+from data.conexao import Conexao
+from model.controler_mensagem import Mensagem
 
 app = Flask(__name__)
 
@@ -12,27 +14,13 @@ def pagina_principal():
 
 @app.route("/post/cadastrar_mensagem", methods = ["POST"])
 def post_mensagem():
-    usuario = request.form.get("user")
+    usuario = request.form.get("usuario")
     mensagem = request.form.get("comentario")
-    data_hora = datetime.datetime.today()
-
-    conexao =mysql.connector.connect(
-        host = "localhost", port = 3306, user = "root", password = "root", database = "db_feedback"
-    )
-    cursor = conexao.cursor()
-
-    sql = "INSERT INTO tb_comentarios(nome,data_hora, comentario) VALUES(%s,%s,%s)"
-
-    valores = (usuario, data_hora, mensagem)
-
-    cursor.execute(sql, valores)
-
-    conexao.commit()
-
-    cursor.close()
-
-    conexao.close()
-
+    
+    
+    
+    Mensagem.cadastrar_mensagem(usuario, mensagem)
+    
     return redirect("/")
     
 
